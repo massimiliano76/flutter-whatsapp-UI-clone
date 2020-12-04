@@ -43,8 +43,7 @@ class _HomePage2State extends State<HomePage2>
                 //pinned: true,
                 bottom: TabBar(
                   isScrollable: true,
-
-                  indicatorWeight: 3.0,
+                  indicatorWeight: 3.5,
                   indicatorSize: TabBarIndicatorSize.tab,
                   indicatorColor: Colors.white,
                   tabs: [
@@ -93,19 +92,55 @@ class _HomePage2State extends State<HomePage2>
               CallView(),
             ],
           )),
-      floatingActionButton: indexTab == 1 ? FloatingActionButton(
-        backgroundColor: Colors.green,
-        child: Icon(Icons.message),
-        onPressed: () {},
-      ) : indexTab == 2 ? FloatingActionButton(
-        backgroundColor: Colors.green,
-        child: Icon(Icons.call),
-        onPressed: () {},
-      ) : indexTab == 3 ? FloatingActionButton(
-        backgroundColor: Colors.green,
-        child: Icon(Icons.call),
-        onPressed: () {},
-      ): Container(),
+      floatingActionButton: indexTab == 1
+          ? FloatingActionButton(
+              backgroundColor: Colors.green,
+              child: Icon(Icons.message),
+              onPressed: () {},
+            )
+          : indexTab == 2
+              ? Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Container(
+                        margin: EdgeInsets.only(right: 8),
+                        height: 45,
+                        width: 45,
+                        decoration: BoxDecoration(//color: Colors.black, 
+                        shape: BoxShape.circle),
+                        child: FloatingActionButton(
+                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.teal,
+                          child: Icon(
+                            Icons.edit,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: FloatingActionButton(
+                        backgroundColor: Colors.green,
+                        child: Icon(
+                          Icons.photo_camera,
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
+                  ],
+                )
+              : indexTab == 3
+                  ? FloatingActionButton(
+                      backgroundColor: Colors.green,
+                      child: Icon(Icons.call),
+                      onPressed: () {},
+                    )
+                  : Container(),
     );
   }
 }
