@@ -15,16 +15,5 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-<ul style="list-style:none;">
-  <li style="display:inline;">
-  <img src="assets/screenshots/ss1.png" width="300">
-  
-  </li>
-  <li style="display:inline;">
-<img src="assets/screenshots/ss3.png" width="300">
-  </li>
-  <li style="display:inline;">
-  <img src="assets/screenshots/ss2.png" width="300">
-  </li>
-  
-</ul>
+
+<img src="assets/screenshots/ss1.png" width="300">          <img src="assets/screenshots/ss3.png" width="300">          <img src="assets/screenshots/ss2.png" width="300">
