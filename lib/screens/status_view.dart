@@ -20,6 +20,7 @@ class _StatusViewState extends State<StatusView> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key:  ValueKey(2),
         margin: EdgeInsets.all(0),
         padding: EdgeInsets.only(top: 8),
         child: ListView(

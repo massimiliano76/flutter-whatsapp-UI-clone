@@ -20,48 +20,50 @@ class _ChatViewState extends State<ChatView> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(0),
-      padding: EdgeInsets.all(0),
-        child:          
-      ListView.builder(
-              padding: EdgeInsets.all(0),
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              // physics: ClampingScrollPhysics(),
-              physics: NeverScrollableScrollPhysics(
-                parent: ScrollPhysics()
-              ),
-              itemCount: usersList.length,
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-        
-        ListTile(
-        leading: CircleAvatar(
-          radius: 30,
-          backgroundImage: NetworkImage(usersList[index].imgUrl),),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(usersList[index].userName, style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),),
-            Text(usersList[index].time, style: TextStyle(fontSize: 14,),),
-          ],
+    return Scaffold(
+          body: Container(
+        margin: EdgeInsets.all(0),
+        padding: EdgeInsets.all(0),
+          child:          
+        ListView.builder(
+                padding: EdgeInsets.all(0),
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                // physics: ClampingScrollPhysics(),
+                physics: NeverScrollableScrollPhysics(
+                  parent: ScrollPhysics()
+                ),
+                itemCount: usersList.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
           
+          ListTile(
+          leading: CircleAvatar(
+            radius: 30,
+            backgroundImage: NetworkImage(usersList[index].imgUrl),),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(usersList[index].userName, style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),),
+              Text(usersList[index].time, style: TextStyle(fontSize: 14,),),
+            ],
+            
+          ),
+          subtitle: Text("Available"),
+          ),
+          Divider(
+          indent: MediaQuery.of(context).size.width/4.5,
+          endIndent: 15,
+          height: 0.5,
+          thickness: 1,
+          ),
+                    ],
+                  );
+                },
+                ),
         ),
-        subtitle: Text("Available"),
-        ),
-        Divider(
-        indent: MediaQuery.of(context).size.width/4.5,
-        endIndent: 15,
-        height: 0.5,
-        thickness: 1,
-        ),
-                  ],
-                );
-              },
-              ),
-      );
+    );
   }
 }
 
@@ -71,8 +73,7 @@ class UserTile extends StatelessWidget {
   UserTile({this.userName, this.imgUrl});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-          body: Container(
+    return Container(
           width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 2.0),
           child: Column(
@@ -118,9 +119,7 @@ class UserTile extends StatelessWidget {
         )
       ],
           ),
-        ),
-        
-    );
+        );
   }
 }
 
